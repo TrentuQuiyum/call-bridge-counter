@@ -193,7 +193,7 @@ th{color:var(--muted); font-weight:600}
   .players { grid-template-columns: 1fr; }
 
   .roundGrid { grid-template-columns: 1fr; gap: 6px; }
-  .gridHead { display: none; }
+  .gridHead { display: block; }
 
   .roundRows {
     grid-template-columns: 1fr;
