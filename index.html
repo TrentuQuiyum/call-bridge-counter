@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Call Bridge Points Counter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <h1>Call Bridge Points Counter</h1>
+      <p class="sub">
+        Round 1 is bid free: points = tricks won. From Round 2: call 2 to 8. If call 8 and get 8+, score 16. If tricks are double or more than call, score -call. Total tricks must be exactly 13.
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Players</h2>
+      <div id="players" class="players"></div>
+      <div class="row gap">
+        <button id="resetNamesBtn" class="btn secondary" type="button">Reset Names</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>Add Round</h2>
+        <div class="row gap small">
+          <label class="pill">
+            <input id="bidFreeToggle" type="checkbox" />
+            Bid free round
+          </label>
+          <span id="roundLabel" class="muted"></span>
+        </div>
+      </div>
+
+      <div class="roundGrid">
+        <div class="gridHead">Player</div>
+        <div class="gridHead">Call</div>
+        <div class="gridHead">Tricks</div>
+        <div class="gridHead">Round Points</div>
+
+        <div id="roundRows" class="roundRows"></div>
+      </div>
+
+      <div class="row between">
+        <div>
+          <div id="trickWarning" class="warn" aria-live="polite"></div>
+          <div class="muted smallText">Total tricks across 4 players must equal 13.</div>
+        </div>
+        <div class="row gap">
+          <button id="addRoundBtn" class="btn" type="button">Add Round</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>Scoreboard</h2>
+        <div class="row gap">
+          <button id="undoBtn" class="btn secondary" type="button">Undo Last Round</button>
+          <button id="resetBtn" class="btn danger" type="button">Reset Match</button>
+        </div>
+      </div>
+
+      <div id="scoreboard" class="scoreboard"></div>
+
+      <h3>Rounds</h3>
+      <div id="roundsTableWrap" class="tableWrap"></div>
+    </section>
+
+    <footer class="foot muted">
+      Offline app. Made by Abdul Quiyum
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
